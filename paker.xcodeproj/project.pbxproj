@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CF0D87CF27B6A8DF00D6C08B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF0D87CE27B6A8DF00D6C08B /* main.cpp */; };
+		CF0D87D727B6AB4C00D6C08B /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF0D87D627B6AB4C00D6C08B /* Python.framework */; };
+		CF0D87DB27B6AC8A00D6C08B /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF0D87DA27B6AC8A00D6C08B /* Python.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,9 @@
 /* Begin PBXFileReference section */
 		CF0D87CB27B6A8DF00D6C08B /* paker */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = paker; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF0D87CE27B6A8DF00D6C08B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		CF0D87D627B6AB4C00D6C08B /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = "../../../../../../opt/homebrew/Cellar/python@3.9/3.9.10/Frameworks/Python.framework"; sourceTree = "<group>"; };
+		CF0D87D827B6AC8300D6C08B /* Python3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python3.framework; path = Library/Frameworks/Python3.framework; sourceTree = DEVELOPER_DIR; };
+		CF0D87DA27B6AC8A00D6C08B /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = System/Library/Frameworks/Python.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF0D87DB27B6AC8A00D6C08B /* Python.framework in Frameworks */,
+				CF0D87D727B6AB4C00D6C08B /* Python.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +50,7 @@
 			children = (
 				CF0D87CD27B6A8DF00D6C08B /* paker */,
 				CF0D87CC27B6A8DF00D6C08B /* Products */,
+				CF0D87D527B6AB4C00D6C08B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +68,16 @@
 				CF0D87CE27B6A8DF00D6C08B /* main.cpp */,
 			);
 			path = paker;
+			sourceTree = "<group>";
+		};
+		CF0D87D527B6AB4C00D6C08B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF0D87DA27B6AC8A00D6C08B /* Python.framework */,
+				CF0D87D827B6AC8300D6C08B /* Python3.framework */,
+				CF0D87D627B6AB4C00D6C08B /* Python.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +200,8 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SYSTEM_HEADER_SEARCH_PATHS = "/opt/homebrew/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Headers";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -234,6 +254,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				SYSTEM_HEADER_SEARCH_PATHS = "/opt/homebrew/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Headers";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
@@ -241,6 +263,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/opt/homebrew/Cellar/python@3.9/3.9.10/Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -249,6 +275,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/opt/homebrew/Cellar/python@3.9/3.9.10/Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
